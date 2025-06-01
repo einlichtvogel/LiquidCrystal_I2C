@@ -87,8 +87,8 @@ public:
   virtual void write(uint8_t);
 #endif
   void command(uint8_t);
-  void init();
-  void oled_init();
+  void init(uint8_t I2C_SDA, uint8_t I2C_SCL);
+  void oled_init(uint8_t I2C_SDA, uint8_t I2C_SCL);
 
 ////compatibility API function aliases
 void blink_on();						// alias for blink()
@@ -112,7 +112,7 @@ void draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixe
 	 
 
 private:
-  void init_priv();
+  void init_priv(uint8_t I2C_SDA, uint8_t I2C_SCL);
   void send(uint8_t, uint8_t);
   void write4bits(uint8_t);
   void expanderWrite(uint8_t);
